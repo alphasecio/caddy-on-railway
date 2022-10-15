@@ -1,2 +1,4 @@
+:{$PORT}
+
 root * /srv
 file_server
