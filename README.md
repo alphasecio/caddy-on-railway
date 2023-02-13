@@ -1,5 +1,5 @@
 # Static Website on Railway using Caddy Server
-This example deploys a static website on Railway using Caddy server.
+This template deploys a static website on Railway using Caddy server. For a step-by-step guide, see [this](https://alphasec.io/how-to-deploy-a-static-website-with-caddy-on-railway/) post.
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/TETV8z?referralCode=alphasec)
 
