@@ -1,4 +1,33 @@
-:{$PORT}
+wizer.dev {
+    reverse_proxy {$NUXT_APP_URL}
+    
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Frame-Options "DENY"
+        X-Content-Type-Options "nosniff"
+        X-XSS-Protection "1; mode=block"
+    }
+    
+    log {
+        output stdout
+        format console
+    }
+}
 
-root * /srv
-file_server
+api.wizer.dev {
+    reverse_proxy {$NUXT_APP_URL}
+    
+    header {
+        Access-Control-Allow-Origin "*"
+        Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Access-Control-Allow-Headers "Content-Type, Authorization"
+    }
+}
+
+www.wizer.dev {
+    redir https://wizer.dev{uri} permanent
+}
+
+:{$PORT} {
+    reverse_proxy {$NUXT_APP_URL}
+}

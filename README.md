@@ -1,13 +1,14 @@
-# Static Website Deployment with Caddy Server
+# Caddy Reverse Proxy Server for Nuxt 3
 
-This template deploys a static website using the [Caddy](https://caddyserver.com) server and works seamlessly with both [Railway](https://railway.app/?referralCode=alphasec) and [DigitalOcean](https://m.do.co/c/5552e11c260f). By default, the `site/` directory gets deployed as a static site. This can be modified by changing the Dockerfile.
+Este servidor Caddy está configurado como proxy inverso para redirigir tráfico del dominio `wizer.dev` hacia una aplicación Nuxt 3 desplegada en [Railway](https://railway.app/?referralCode=alphasec).
 
-### 🚀 Deploy on Railway
+## 🔧 Configuración
 
-For a step-by-step guide, see [this tutorial](https://alphasec.io/how-to-deploy-a-static-website-with-caddy-on-railway/), or click the button below to deploy instantly on [Railway](https://railway.app/?referralCode=alphasec).
+### Variables de Entorno Requeridas
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/TETV8z?referralCode=alphasec)
+Para que el proxy inverso funcione correctamente, necesitas configurar las siguientes variables de entorno en Railway:
 
-### ☁️ Deploy on DigitalOcean
-
-Although this repo is optimized for Railway, the same setup can be deployed to [DigitalOcean](https://m.do.co/c/5552e11c260f) using App Platform or a custom droplet. Follow [this guide](https://alphasec.io/how-to-deploy-a-static-website-with-caddy-on-digitalocean/) for detailed instructions.
+```bash
+NUXT_APP_URL=https://app-nuxt-internal.up.railway.app
+PORT=8080
+```
